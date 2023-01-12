@@ -1,13 +1,13 @@
 class Solution {
-    public int solution(long num) {
-        
+    public int solution(int num) {
+        long n = (long)num;
         int cnt = 0;
         
-        while(num != 1){
-            if(num % 2 == 0){
-                num /= 2;
+        while(n != 1){
+            if(n % 2 == 0){
+                n /= 2;
             }else{
-                num = num * 3 + 1;
+                n = n * 3 + 1;
             }
             cnt++;
             if(cnt >= 500)
