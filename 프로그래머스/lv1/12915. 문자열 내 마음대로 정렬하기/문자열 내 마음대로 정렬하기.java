@@ -1,27 +1,18 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public String[] solution(String[] strings, int n) {
-        for (int i = 0; i < strings.length - 1; i++) {
-            for (int j = i + 1; j < strings.length; j++) {
-                String s1 = strings[i];
-                String s2 = strings[j];
-
-                char c1 = s1.charAt(n);
-                char c2 = s2.charAt(n);
-
-                if (c1 == c2) {
-                    if (s1.compareTo(s2) > 0) {
-                        strings[i] = s2;
-                        strings[j] = s1;
-                    }
-                } else if (c1 > c2) {
-                    strings[i] = s2;
-                    strings[j] = s1;
-                }
-            }
+        String[] answer = new String[strings.length];
+        ArrayList<String> arr = new ArrayList<>();
+        for(int i = 0; i < strings.length; i++) {
+            arr.add("" + strings[i].charAt(n) + strings[i]);
         }
-
-        return strings;
+        Collections.sort(arr);
+        for(int i = 0; i < strings.length; i++) {
+            answer[i] = arr.get(i).substring(1, arr.get(i).length());
+        }
+        System.out.print(arr);
+        
+        return answer;
     }
 }
