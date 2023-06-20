@@ -1,8 +1,8 @@
 class Solution {
     public String solution(String code) {
-        if (code.isEmpty()) {
-            return "EMPTY";
-        }
+        // if (code.isEmpty()) {
+        //     return "EMPTY";
+        // }
         StringBuilder ret = new StringBuilder();
         boolean mode = false; 
 
