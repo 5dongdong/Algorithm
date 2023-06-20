@@ -4,7 +4,7 @@ class Solution {
         for(int i = 0; i < included.length; i++) {
             int[] arr = new int[included.length];
             arr[i] = a + d*i;
-            if(included[i] == true) {
+            if(included[i]) {
                 answer += arr[i];
             }
         }
